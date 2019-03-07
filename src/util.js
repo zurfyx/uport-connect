@@ -30,16 +30,17 @@ export function ipfsAdd(jwt) {
     const payload = new FormData()
     payload.append("file", new Blob([jwt]))
     const req = new XMLHttpRequest()
-    // Resolve to hash on success
-    req.onreadystatechange = () => {
-      if (req.readyState !== 4) return
-      if (req.status != 200) reject(`Error ${req.status}: ${req.responseText}`)
-      else resolve(JSON.parse(req.responseText).Hash)
-    }
-    // Send request
-    req.open('POST', 'https://ipfs.infura.io:5001/api/v0/add')
-    req.setRequestHeader('accept','application/json')
-    req.enctype = 'multipart/form-data'
-    req.send(payload)
+    resolve('');
+    // // Resolve to hash on success
+    // req.onreadystatechange = () => {
+    //   if (req.readyState !== 4) return
+    //   if (req.status != 200) reject(`Error ${req.status}: ${req.responseText}`)
+    //   else resolve(JSON.parse(req.responseText).Hash)
+    // }
+    // // Send request
+    // req.open('POST', 'https://ipfs.infura.io:5001/api/v0/add')
+    // req.setRequestHeader('accept','application/json')
+    // req.enctype = 'multipart/form-data'
+    // req.send(payload)
   })
 }
