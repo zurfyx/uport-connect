@@ -4,6 +4,7 @@
   "description": "Library for integrating uPort into your app frontend",
   "main": "lib/index.js",
   "scripts": {
+    "prepare": "npm run build",
     "build": "yarn build:es5 && yarn build:dist && yarn build:dist:prod",
     "build:npm": "npm run build:es5 && npm run build:dist && npm run build:dist:prod",
     "build:es5": "./node_modules/.bin/babel src -d lib",
